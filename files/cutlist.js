@@ -1,4 +1,4 @@
-const DEBUG = false;
+const DEBUG = true;
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -26,13 +26,14 @@ var CutList = (function () {
     [12, 400],
     [4, 310],
   ];
+  var debug_stock_list = [[2, 1700]];
   var s;
   var cl = {
     settings: {
       cut_array: [],
       stock_array: [],
       cut_list: DEBUG ? debug_cut_list : [],
-      stock_list: [],
+      stock_list: DEBUG ? debug_stock_list : [],
       kerf: 3,
       stock: 3600,
       cut_ul: $("#cut-list"),
@@ -93,7 +94,7 @@ var CutList = (function () {
         var inner_el = el.find(".bin-inner");
         if (!s.stock_array[i].custom && s.stock_list.length > 0) inner_el.addClass("over");
         var cuts = s.stock_array[i].cuts;
-        var remained = s.stock;
+        var remained = s.stock_array[i].size;
         for (var j = 0; j < cuts.length; j++) {
           var cut_size = Math.floor((inner_el.height() - 1) * (cuts[j] / s.stock_array[i].size)) - 1;
           var cut_el = $(
