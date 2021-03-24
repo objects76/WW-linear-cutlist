@@ -10,15 +10,12 @@ div.box1 {
 div.box1 h1 {
   border-radius: 2px;
   background-color: #0099da;
-  margin-bottom: 3px;
   color: #fff;
   font-size: 16px;
   font-weight: 300;
-  height: 25px;
-  line-height: 20px;
+  height: 1rem;
   font-family: "Roboto", Arial, sans-serif;
-  padding: 3px;
-  padding-left: 5px;
+  padding: 5px;
 }
 
 div.box2 {

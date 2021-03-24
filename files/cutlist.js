@@ -5,7 +5,7 @@ function isNumber(n) {
 
 function arraySum(arr, pad) {
   var sum = 0;
-  for (var i = 0, len = arr.length; i < len; sum += arr[i++]);
+  for (var i = 0, len = arr.length; i < len; ++i) sum += arr[i];
   sum += arr.length * pad;
   return sum;
 }
@@ -27,6 +27,7 @@ var CutList = (function () {
     [4, 310],
   ];
   var debug_stock_list = [[2, 1700]];
+
   var s;
   var cl = {
     settings: {
